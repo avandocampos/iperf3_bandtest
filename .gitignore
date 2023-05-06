@@ -163,3 +163,4 @@ cython_debug/
 # Other files
 cygwin*
 iperf3*
+resultados*
