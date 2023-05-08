@@ -4,7 +4,7 @@
 
 You should create a <code>.env</code> file to keep a set of variables that you don't want to expose in the main codebase.
 
-A example of this file is:
+An example of this file is:
 
     REMOTE_HOST=172.30.118.72
     PORT=5001
