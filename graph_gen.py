@@ -38,7 +38,7 @@ ax2.plot(tcp_receive_times, tcp_receive_rates, label='TCP Receive')
 ax2.plot(udp_receive_times, udp_receive_rates, label='UDP Receive')
 ax2.set_title('Taxa de Transferência (Recebimento)')
 ax2.set_xlabel('Tempo (s)')
-ax2.set_ylabel('Taxa de Transferência (Gbps)')
+ax2.set_ylabel('Taxa de Transferência (Mbps)')
 ax2.legend()
 ax2.grid()
 
