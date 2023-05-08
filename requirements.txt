@@ -1,0 +1,4 @@
+matplotlib==3.7.1
+matplotlib-inline==0.1.6
+numpy==1.24.3
+decouple==0.0.7
