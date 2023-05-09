@@ -27,6 +27,8 @@ This repository contains a Python script for measuring network performance using
             SMTP_USERNAME=sender_email@gmail.com
             SMTP_PASSWORD=sender_password
             TO_EMAIL=destination_email@gmail.com
+            PLOT_GRAPH=False
+            SEND_EMAIL=False
 
 ### Optional tasks
 
