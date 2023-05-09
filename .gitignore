@@ -163,7 +163,7 @@ cython_debug/
 *.ipynb
 
 # Images
-*.png
+# *.png
 
 # Other files
 cygwin*
