@@ -43,7 +43,7 @@ This repository contains a Python script for measuring network performance using
 
 ## Usage Example
 
-![alt](graph_example.png)
+![Tranfer rate per time graph](graph_example.png)
 ## File structure
 
 - `client_iperf3.py`: Python script that realize TCP and UDP tests in client side;
@@ -63,4 +63,4 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 
 ## License
 
-This project is licensed under the Apache Licence 2.0 - see the [LICENSE.md](LICENSE) file for details.
+This project is licensed under the Apache Licence 2.0 - see the [LICENSE](LICENSE) file for details.
