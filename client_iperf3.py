@@ -16,7 +16,7 @@ time = config('TIME', default=60, cast=int)
 time_wait = config('TIME_WAIT', default=60, cast=int)
 
 # Realiza o teste TCP enviando dados para o servidor
-print("Seding TCP data...")
+print("Sending TCP data...")
 tcp_send_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 --json', shell=True)
 
 # Converte a saída em um objeto JSON
@@ -63,7 +63,6 @@ with open('results.json', 'w') as json_file:
 
 # Verifica se deve criar um gráfico com os resultados
 graph = config('PLOT_GRAPH', default=False, cast=bool)
-
 if graph:
     from graph_gen import plot_graph
 
@@ -73,3 +72,23 @@ if graph:
     print('Ploting graph...')
 
     plot_graph(results)
+
+
+email = config('SEND_EMAIL', default=False, cast=bool)
+if email:
+    from email_sender import send_email
+    from email_text import to_html
+
+    # Lê os dados do arquivo gerado pelo código anterior
+    with open('results.json', 'r') as json_file:
+        results = json.load(json_file)
+
+    # Lê a imagem do gráfico gerada anteriormente
+    with open('graph.png', 'rb') as f:
+        img_data = f.read()
+
+    email_body = to_html(results)
+
+    print('Sending email...')
+
+    send_email(email_body, img_data)
