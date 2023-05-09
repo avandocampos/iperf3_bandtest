@@ -5,7 +5,7 @@ This repository contains a Python script for measuring network performance using
 ## Requirements
 
 - Python 3.x
-- Decouple
+- Python-decouple
 - Matplotlib
 - Numpy
 - Iperf3
