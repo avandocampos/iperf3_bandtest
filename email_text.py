@@ -1,3 +1,6 @@
+from datetime import datetime as dt
+
+
 def to_html(results):
 
     style = """
@@ -43,6 +46,9 @@ def to_html(results):
 
     </head>
     <body>
+	<div class=content-text>
+		<p>Teste realizado em {dt.now()}</p>
+	</div>
         <div class="table-container">
             <table id="tcp-send">
                 <thead>
