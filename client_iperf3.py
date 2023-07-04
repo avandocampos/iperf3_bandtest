@@ -16,39 +16,39 @@ time = config('TIME', default=60, cast=int)
 time_wait = config('TIME_WAIT', default=60, cast=int)
 
 # Realiza o teste TCP enviando dados para o servidor
-print("Sending TCP data...")
-tcp_send_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 --json', shell=True)
+print("Receiving TCP data...")
+tcp_receive_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 --json', shell=True)
 
 # Converte a saída em um objeto JSON
-tcp_send_result = json.loads(tcp_send_output.decode())
+tcp_receive_result = json.loads(tcp_receive_output.decode())
 
 # Aguarda um tempo determinado entre um teste e outro
 sleep(time_wait)
 
 # Realiza o teste UDP enviando dados para o servidor
-print("Sending UDP data...")
-udp_send_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 -u -b 0 --json', shell=True)
+print("Receiving UDP data...")
+udp_receive_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 -u -b 0 --json', shell=True)
 
 # Converte a saída em um objeto JSON
-udp_send_result = json.loads(udp_send_output.decode())
+udp_receive_result = json.loads(udp_receive_output.decode())
 
 sleep(time_wait)
 
 # Realiza o teste TCP recebendo dados do servidor
-print("Receiving TCP data...")
-tcp_receive_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 --reverse --json', shell=True)
+print("Sending TCP data...")
+tcp_send_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 --reverse --json', shell=True)
 
 # Converte a saída em um objeto JSON
-tcp_receive_result = json.loads(tcp_receive_output.decode())
+tcp_send_result = json.loads(tcp_send_output.decode())
 
 sleep(time_wait)
 
 # Realiza o teste UDP recebendo dados do servidor
-print("Receiving UDP data...")
-udp_receive_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 -u -b 0 --reverse --json', shell=True)
+print("Sending UDP data...")
+udp_send_output = subprocess.check_output(f'iperf3 -c {remote_host} -p {port} -t {time} -i 1 -u -b 0 --reverse --json', shell=True)
 
 # Converte a saída em um objeto JSON
-udp_receive_result = json.loads(udp_receive_output.decode())
+udp_send_result = json.loads(udp_send_output.decode())
 
 # Exporta os resultados em formato JSON
 with open('results.json', 'w') as json_file:
