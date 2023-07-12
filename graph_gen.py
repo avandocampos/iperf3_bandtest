@@ -26,7 +26,7 @@ def plot_graph(results):
     # Plota o primeiro gráfico
     ax1.plot(tcp_send_times, tcp_send_rates, label='TCP Send')
     ax1.plot(udp_send_times, udp_send_rates, label='UDP Send')
-    ax1.set_title('Taxa de Transferência (MBits por segundo enviados pelo servidor)')
+    ax1.set_title('Taxa de Transferência (MBits por segundo enviados pelo cliente)')
     ax1.set_xlabel('Tempo (s)')
     ax1.set_ylabel('Taxa de Transferência (Mbps)')
     ax1.legend()
@@ -35,7 +35,7 @@ def plot_graph(results):
     # Plota o segundo gráfico
     ax2.plot(tcp_receive_times, tcp_receive_rates, label='TCP Receive')
     ax2.plot(udp_receive_times, udp_receive_rates, label='UDP Receive')
-    ax2.set_title('Taxa de Transferência (MBits por segundo recebidos pelo servidor)')
+    ax2.set_title('Taxa de Transferência (MBits por segundo recebidos pelo cliente)')
     ax2.set_xlabel('Tempo (s)')
     ax2.set_ylabel('Taxa de Transferência (Mbps)')
     ax2.legend()
