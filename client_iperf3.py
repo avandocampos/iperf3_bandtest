@@ -52,8 +52,11 @@ udp_receive_result = json.loads(udp_receive_output.decode())
 
 # Exporta os resultados em formato JSON
 with open('results.json', 'w') as json_file:
+    from datetime import datetime
+    date = datetime.now()
     json.dump(
         {
+            'DATE': date,
             'TCP_SEND': tcp_send_result,
             'UDP_SEND': udp_send_result,
             'TCP_RECEIVE': tcp_receive_result,
