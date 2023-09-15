@@ -56,7 +56,7 @@ with open('results.json', 'w') as json_file:
     date = datetime.now()
     json.dump(
         {
-            'DATE': date,
+            'DATE': str(date),
             'TCP_SEND': tcp_send_result,
             'UDP_SEND': udp_send_result,
             'TCP_RECEIVE': tcp_receive_result,
